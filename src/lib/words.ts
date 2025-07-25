@@ -3728,7 +3728,6 @@ export const words = {
         "shims",
         "zowie",
         "jihad",
-        "savvy",
         "nadir",
         "basso",
         "monic",

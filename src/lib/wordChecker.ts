@@ -16,7 +16,7 @@ export function checkWord(characterValue: string, index: number, referenceWord: 
   let exactMatches = chars.filter((c, i) => c === characterValue && characterValue === chars[i]).length;
   
   // If we still have remaining occurrences after exact matches
-  if (refCount > exactMatches && chars.includes(characterValue)) {
+   if (refCount > exactMatches || chars.includes(characterValue)) {
     return "bg-warning";
   }
   
