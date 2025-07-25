@@ -42,11 +42,13 @@
 
   let guesses: IGuessedWord[] = [];
 
-  $: fistClassToSet = checkWord(firstValue, 0, referenceWord);
-  $: secondClassToSet = checkWord(secondValue, 1, referenceWord);
-  $: thirdClassToSet = checkWord(thirdValue, 2, referenceWord);
-  $: fourthClassToSet = checkWord(fourthValue, 3, referenceWord);
-  $: fifthClassToSet = checkWord(fifthValue, 4, referenceWord);
+
+$: wordClasses = fullWord.length === 5 ? checkWord(fullWord, referenceWord) : ["bg-danger","bg-danger","bg-danger","bg-danger","bg-danger"];
+$: fistClassToSet = wordClasses[0];
+$: secondClassToSet = wordClasses[1];
+$: thirdClassToSet = wordClasses[2];
+$: fourthClassToSet = wordClasses[3];
+$: fifthClassToSet = wordClasses[4];
 
   function playRound() {
     if (hasWon || hasLost) {
